@@ -6,6 +6,7 @@ import About from './components/About';
 import Mandate from './components/Mandate';
 import GlobalPerspectives from './components/GlobalPerspectives';
 import Contact from './components/Contact';
+import ThankYou from './components/ThankYou';
 import Footer from './components/Footer';
 
 function ScrollToTop() {
@@ -49,6 +50,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/global-perspectives" element={<GlobalPerspectives />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </main>
         <Footer />

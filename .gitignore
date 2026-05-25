@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+# htaccess may contain server env vars / credentials
+public/.htaccess
