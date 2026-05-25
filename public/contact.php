@@ -51,48 +51,219 @@ if (!$smtpUser || !$smtpPass) {
 // ── Build HTML email ────────────────────────────────────────────────────────
 $subject = "Institutional Enquiry from {$firstName} {$lastName}";
 $msgHtml = nl2br($message);
+$year    = date('Y');
 $html = <<<HTML
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;font-family:Arial,sans-serif;background:#f1f5f9;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 20px;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
-        <tr>
-          <td style="background:#1d4ed8;padding:28px 36px;">
-            <h1 style="color:#ffffff;margin:0;font-size:18px;font-weight:700;letter-spacing:0.5px;">
-              New Institutional Enquiry — ISECC
-            </h1>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:32px 36px;">
-            <table width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td style="padding:6px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;width:130px;">Name</td>
-                <td style="padding:6px 0;font-size:15px;color:#1e293b;">{$firstName} {$lastName}</td>
-              </tr>
-              <tr>
-                <td style="padding:6px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Reply-To</td>
-                <td style="padding:6px 0;font-size:15px;"><a href="mailto:{$email}" style="color:#1d4ed8;text-decoration:none;">{$email}</a></td>
-              </tr>
-            </table>
-            <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;">
-            <p style="font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;">Message</p>
-            <p style="font-size:15px;color:#1e293b;line-height:1.75;margin:0;">{$msgHtml}</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:20px 36px;background:#f8fafc;border-top:1px solid #e2e8f0;">
-            <p style="margin:0;font-size:12px;color:#94a3b8;text-align:center;">
-              Sent via the ISECC website contact form &nbsp;·&nbsp; isecc.in
-            </p>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>New Institutional Enquiry — ISECC</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f1f5f9;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+         style="background-color:#f1f5f9;padding:48px 16px;">
+    <tr>
+      <td align="center">
+
+        <!-- ════════════════ CARD ════════════════ -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
+               style="max-width:600px;width:100%;background:#ffffff;
+                      border-radius:20px;overflow:hidden;
+                      border:1px solid #e2e8f0;
+                      box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+
+          <!-- ── HEADER ──────────────────────────────────────────────────── -->
+          <tr>
+            <td style="background:#1e3a8a;padding:0;">
+
+              <!-- Blue gradient top strip -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 55%,#3b82f6 100%);
+                              padding:32px 40px 28px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <!-- Logo -->
+                        <td valign="middle" style="width:140px;">
+                          <img src="https://www.isecc.in/ISECC.png"
+                               alt="ISECC"
+                               width="130"
+                               style="display:block;height:auto;max-width:130px;
+                                      filter:brightness(0) invert(1);
+                                      -webkit-filter:brightness(0) invert(1);">
+                        </td>
+                        <!-- Badge -->
+                        <td valign="middle" align="right">
+                          <span style="display:inline-block;
+                                       background:rgba(255,255,255,0.18);
+                                       border:1px solid rgba(255,255,255,0.30);
+                                       color:#bfdbfe;border-radius:30px;
+                                       font-size:11px;font-weight:700;
+                                       letter-spacing:1.5px;text-transform:uppercase;
+                                       padding:6px 14px;">
+                            New Enquiry
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <div style="margin-top:22px;padding-top:22px;
+                                border-top:1px solid rgba(255,255,255,0.15);">
+                      <p style="margin:0;color:#bfdbfe;
+                                 font-size:11px;font-weight:700;
+                                 letter-spacing:2px;text-transform:uppercase;">
+                        Institutional Enquiry
+                      </p>
+                      <h1 style="margin:6px 0 0;color:#ffffff;
+                                  font-size:24px;font-weight:700;
+                                  letter-spacing:-0.5px;line-height:1.3;">
+                        New message received
+                      </h1>
+                      <p style="margin:8px 0 0;color:#93c5fd;font-size:14px;line-height:1.5;">
+                        Submitted via the ISECC website contact form
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Accent gradient bar -->
+                <tr>
+                  <td style="height:4px;
+                              background:linear-gradient(90deg,#1d4ed8 0%,#60a5fa 50%,#1d4ed8 100%);">
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- ── SENDER DETAILS ──────────────────────────────────────────── -->
+          <tr>
+            <td style="padding:36px 40px 0 40px;">
+              <p style="margin:0 0 14px;
+                         font-size:11px;font-weight:700;
+                         color:#94a3b8;text-transform:uppercase;letter-spacing:2px;">
+                Sender Details
+              </p>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="background:#f8fafc;border-radius:12px;
+                             border:1px solid #e2e8f0;overflow:hidden;">
+                <!-- Name row -->
+                <tr>
+                  <td style="padding:16px 20px;
+                              border-bottom:1px solid #e2e8f0;
+                              background:#f0f6ff;
+                              font-size:11px;font-weight:700;
+                              color:#64748b;text-transform:uppercase;
+                              letter-spacing:1.2px;width:120px;
+                              white-space:nowrap;vertical-align:middle;">
+                    Full Name
+                  </td>
+                  <td style="padding:16px 20px;
+                              border-bottom:1px solid #e2e8f0;
+                              font-size:15px;font-weight:600;
+                              color:#1e293b;vertical-align:middle;">
+                    {$firstName} {$lastName}
+                  </td>
+                </tr>
+                <!-- Email row -->
+                <tr>
+                  <td style="padding:16px 20px;
+                              background:#f0f6ff;
+                              font-size:11px;font-weight:700;
+                              color:#64748b;text-transform:uppercase;
+                              letter-spacing:1.2px;white-space:nowrap;
+                              vertical-align:middle;">
+                    Email
+                  </td>
+                  <td style="padding:16px 20px;
+                              font-size:15px;vertical-align:middle;">
+                    <a href="mailto:{$email}"
+                       style="color:#1d4ed8;text-decoration:none;font-weight:500;">
+                      {$email}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── MESSAGE ────────────────────────────────────────────────── -->
+          <tr>
+            <td style="padding:28px 40px 12px 40px;">
+              <p style="margin:0 0 14px;
+                         font-size:11px;font-weight:700;
+                         color:#94a3b8;text-transform:uppercase;letter-spacing:2px;">
+                Message
+              </p>
+              <div style="background:#f8fafc;border-radius:12px;
+                           border:1px solid #e2e8f0;
+                           border-left:5px solid #1d4ed8;
+                           padding:22px 26px;">
+                <p style="margin:0;font-size:15px;color:#334155;line-height:1.85;">
+                  {$msgHtml}
+                </p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ── REPLY CTA ──────────────────────────────────────────────── -->
+          <tr>
+            <td style="padding:24px 40px 40px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="border-radius:10px;
+                              background:linear-gradient(135deg,#1e3a8a,#1d4ed8);">
+                    <a href="mailto:{$email}?subject=Re%3A%20Your%20Enquiry%20to%20ISECC"
+                       style="display:inline-block;padding:14px 30px;
+                              color:#ffffff;font-size:14px;font-weight:700;
+                              text-decoration:none;letter-spacing:0.4px;">
+                      &#10003;&nbsp;&nbsp;Reply to {$firstName}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+          <tr>
+            <td style="background:#f8fafc;border-top:1px solid #e2e8f0;
+                        padding:24px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="middle">
+                    <img src="https://www.isecc.in/ISECC.png"
+                         alt="ISECC"
+                         width="72"
+                         style="display:block;height:auto;
+                                opacity:0.35;filter:grayscale(100%);
+                                -webkit-filter:grayscale(100%);">
+                  </td>
+                  <td valign="middle" align="right">
+                    <p style="margin:0;font-size:12px;color:#94a3b8;line-height:1.7;text-align:right;">
+                      India Strategic Economic Corridors Council<br>
+                      <a href="https://www.isecc.in"
+                         style="color:#1d4ed8;text-decoration:none;font-weight:500;">
+                        www.isecc.in
+                      </a>
+                      &nbsp;&bull;&nbsp; &copy; {$year} ISECC. All rights reserved.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /CARD -->
+
+      </td>
+    </tr>
   </table>
+
 </body>
 </html>
 HTML;

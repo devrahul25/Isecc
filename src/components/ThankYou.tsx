@@ -27,18 +27,7 @@ export default function ThankYou() {
 
       <div className="relative z-10 max-w-lg w-full text-center space-y-8">
         {/* Logo */}
-        <Link to="/" className="inline-flex justify-center">
-          <img
-            src="/ISECC.png"
-            alt="ISECC Logo"
-            className="h-14 w-auto object-contain mix-blend-multiply"
-            onError={(e) => {
-              const t = e.target as HTMLImageElement;
-              t.style.display = 'none';
-            }}
-          />
-        </Link>
-
+       
         {/* Card */}
         <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgb(0,0,0,0.06)] border border-slate-100 px-10 py-12 space-y-6">
           {/* Icon */}
@@ -83,10 +72,7 @@ export default function ThankYou() {
           </Link>
         </div>
 
-        <p className="text-xs text-slate-400">
-          A confirmation has been sent to our team at{' '}
-          <span className="text-isecc-blue font-medium">syadav@isecc.in</span>
-        </p>
+    
       </div>
     </div>
   );
