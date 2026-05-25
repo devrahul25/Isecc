@@ -44,10 +44,18 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-light">
-          <p>&copy; {new Date().getFullYear()} ISECC. All rights reserved.</p>
-          <p className="flex items-center gap-2">
-            Design and Development by <a href="https://jaiveeru.co.in" target="_blank" rel="noopener noreferrer" className="text-isecc-blue hover:underline font-medium">Jai Veeru Creatives</a>
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500 font-light text-center">
+          <p className="order-2 md:order-1">&copy; {new Date().getFullYear()} ISECC. All rights reserved.</p>
+          <p className="order-1 md:order-2 flex items-center justify-center flex-wrap gap-1">
+            Built with <span role="img" aria-label="heart" className="text-red-500">❤</span> in India
+            <span className="hidden sm:inline text-slate-300">|</span>
+            <span className="w-full sm:w-auto text-center">
+              Powered by&nbsp;
+              <a href="https://jaiveeru.co.in" target="_blank" rel="noopener noreferrer"
+                className="text-slate-500 hover:underline whitespace-nowrap">
+                Jai Veeru Creatives
+              </a>
+            </span>
           </p>
         </div>
       </div>
