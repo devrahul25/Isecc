@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import PasswordGate from './components/PasswordGate';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -42,20 +43,22 @@ function HomePage() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-isecc-blue selection:text-white">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/global-perspectives" element={<GlobalPerspectives />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <PasswordGate>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-isecc-blue selection:text-white">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/global-perspectives" element={<GlobalPerspectives />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </PasswordGate>
   );
 }
 
