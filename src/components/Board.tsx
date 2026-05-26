@@ -13,7 +13,7 @@ export default function Board() {
   }));
 
   return (
-    <section id="board" className="relative py-32 lg:py-40 overflow-hidden">
+    <section id="board" className="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden bg-slate-950">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 

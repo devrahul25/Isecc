@@ -38,7 +38,7 @@ export default function Footer() {
           
           <div className="flex flex-wrap justify-center lg:justify-end gap-8 text-sm font-medium text-slate-600">
             <Link to="/#about" className="hover:text-isecc-blue transition-colors">About Us</Link>
-            
+            <Link to="/our-board" className="hover:text-isecc-blue transition-colors">Our Board</Link>
             <Link to="/global-perspectives" className="hover:text-isecc-blue transition-colors">Global Perspectives</Link>
             <Link to="/#contact" className="hover:text-isecc-blue transition-colors">Contact</Link>
           </div>

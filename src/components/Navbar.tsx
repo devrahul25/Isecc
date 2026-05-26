@@ -68,6 +68,11 @@ export default function Navbar() {
             <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-isecc-blue scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></span>
           </Link>
 
+          <Link to="/our-board" className="hover:text-isecc-blue transition-colors relative group">
+            Our Board
+            <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-isecc-blue scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></span>
+          </Link>
+
           <Link to="/global-perspectives" className="hover:text-isecc-blue transition-colors relative group">
             Global Perspectives
             <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-isecc-blue scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></span>
@@ -107,6 +112,13 @@ export default function Navbar() {
             className="flex items-center px-4 py-3 rounded-xl text-slate-700 font-medium hover:text-isecc-blue hover:bg-blue-50 transition-colors"
           >
             About Us
+          </Link>
+          <Link
+            to="/our-board"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center px-4 py-3 rounded-xl text-slate-700 font-medium hover:text-isecc-blue hover:bg-blue-50 transition-colors"
+          >
+            Our Board
           </Link>
           <Link
             to="/global-perspectives"

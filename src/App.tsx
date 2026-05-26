@@ -4,6 +4,7 @@ import PasswordGate from './components/PasswordGate';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Board from './components/Board';
 import Mandate from './components/Mandate';
 import GlobalPerspectives from './components/GlobalPerspectives';
 import Contact from './components/Contact';
@@ -51,6 +52,7 @@ export default function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/our-board" element={<Board />} />
               <Route path="/global-perspectives" element={<GlobalPerspectives />} />
               <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
