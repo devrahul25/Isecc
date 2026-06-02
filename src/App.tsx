@@ -44,7 +44,7 @@ function HomePage() {
 
 export default function App() {
   return (
-    // <PasswordGate>
+     <PasswordGate>
       <BrowserRouter>
         <ScrollToTop />
         <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-isecc-blue selection:text-white">
@@ -60,7 +60,7 @@ export default function App() {
           <Footer />
         </div>
       </BrowserRouter>
-    // </PasswordGate>
+    </PasswordGate>
   );
 }
 
