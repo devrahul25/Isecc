@@ -13,9 +13,9 @@ export default function Board() {
   }));
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="flex flex-col flex-1 pt-20 md:pt-24">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 lg:pt-48 lg:pb-40 overflow-hidden bg-slate-900">
+      <section className="relative pt-40 pb-32 lg:pt-48 lg:pb-40 overflow-hidden bg-slate-900 hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -86,7 +86,7 @@ export default function Board() {
       </section>
 
       {/* Content Section */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32 hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-24 lg:space-y-32">
           <article className="max-w-4xl mx-auto">
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight text-center">
@@ -155,7 +155,7 @@ export default function Board() {
       </section>
 
       {/* Formal Establishment Section */}
-      <section className="relative py-24 overflow-hidden w-full bg-slate-950 text-center border-t border-slate-900">
+      <section className="relative flex-1 flex items-center overflow-hidden w-full bg-slate-950 text-center border-t border-slate-900">
         {/* Background Image covering full width */}
         <div className="absolute inset-0 z-0">
           <img
@@ -170,7 +170,7 @@ export default function Board() {
         </div>
 
         {/* Formal Establishment Card matching the screenshot */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 w-full py-10">
           <div className="bg-slate-900/45 backdrop-blur-md border border-white/10 p-12 md:p-20 rounded-[2.5rem] shadow-[0_24px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             {/* Subtle grid pattern overlay inside card matching ss */}
             <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:1.75rem_1.75rem] pointer-events-none"></div>

@@ -47,9 +47,9 @@ export default function App() {
      <PasswordGate>
       <BrowserRouter>
         <ScrollToTop />
-        <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-isecc-blue selection:text-white">
+        <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-isecc-blue selection:text-white flex flex-col">
           <Navbar />
-          <main>
+          <main className="flex flex-col flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/our-board" element={<Board />} />
